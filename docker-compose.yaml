@@ -1,0 +1,46 @@
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGDATA: /data/postgres
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    networks:
+      - db
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d catalog_db" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build: .
+    container_name: app
+    command: uv run uvicorn app.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - /app/.venv
+    networks:
+      - db
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
