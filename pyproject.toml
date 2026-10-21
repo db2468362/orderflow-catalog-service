@@ -1,6 +1,6 @@
 [project]
 name = "catalog-service"
-version = "0.1.0"
+version = "0.2.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
@@ -31,4 +31,4 @@ ignore = [
 ]
 
 [tool.uv.sources]
-orderflow-core = { git = "https://github.com/db2468362/orderflow-core.git", tag = "v0.2.3" }
+orderflow-core = { git = "https://github.com/db2468362/orderflow-core.git", tag = "v0.2.4" }
