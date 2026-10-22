@@ -1,5 +1,5 @@
 version = 1
-revision = 5
+revision = 3
 requires-python = ">=3.13"
 
 [[package]]
@@ -113,7 +113,7 @@ requires-dist = [
     { name = "dishka", specifier = ">=1.10.1" },
     { name = "fastapi", specifier = ">=0.143.0" },
     { name = "greenlet", specifier = ">=3.5.6" },
-    { name = "orderflow-core", git = "https://github.com/db2468362/orderflow-core.git?tag=v0.2.4" },
+    { name = "orderflow-core", git = "https://github.com/db2468362/orderflow-core.git?tag=v0.2.5" },
     { name = "pydantic", specifier = ">=2.14.1" },
     { name = "pydantic-settings", specifier = ">=2.15.0" },
     { name = "sqlalchemy", specifier = ">=2.1.4" },
@@ -293,8 +293,8 @@ wheels = [
 
 [[package]]
 name = "orderflow-core"
-version = "0.2.4"
-source = { git = "https://github.com/db2468362/orderflow-core.git?tag=v0.2.4#1adf0bd7a3c173aca40c5d407c2f5cfa60539709" }
+version = "0.2.5"
+source = { git = "https://github.com/db2468362/orderflow-core.git?tag=v0.2.5#a8693cf582eef17be3ffa6448b35422c64588de4" }
 dependencies = [
     { name = "dishka" },
     { name = "fastapi" },

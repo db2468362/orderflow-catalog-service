@@ -7,7 +7,6 @@ import config  # noqa: F401
 from app.dao import categories, products  # noqa: F401
 from app.handlers.categories import router as category_router
 from app.handlers.products import router as product_router
-from app.infrastructure import database  # noqa: F401
 from app.models.category import Category  # noqa: F401
 from app.models.product import Product  # noqa: F401
 from app.services import categories as category_service  # noqa: F401
